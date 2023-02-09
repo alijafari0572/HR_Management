@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using HR_Management.Application.DTOs;
+using HR_Management.Application.Features.LeaveType.Requests.Queries;
 using HR_Management.Application.Features.LeaveType.Requests;
 using HR_Management.Application.Features.LeaveType.Requests.Queries;
 using HR_Management.Application.Persistance.Contracts;
@@ -9,15 +9,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using HR_Management.Application.DTOs.LeaveType;
 
 namespace HR_Management.Application.Features.LeaveType.Handlers.Queries
 {
-    public class GetLeaveTypeDetailRequestHandler : IRequestHandler<GetLeaveTypeDetailRequest, 
+    public class GetLeaveLeaveTypeDetailRequestHandler : IRequestHandler<GetLeaveTypeDetailRequest,
         LeaveTypeDto>
     {
         private readonly ILeaveTypeRepository _leaveTypeRepository;
         private readonly IMapper _mapper;
-        public GetLeaveTypeDetailRequestHandler(ILeaveTypeRepository leaveTypeRepository, 
+        public GetLeaveLeaveTypeDetailRequestHandler(ILeaveTypeRepository leaveTypeRepository, 
             IMapper mapper)
         {
             _leaveTypeRepository = leaveTypeRepository;

@@ -15,7 +15,7 @@ namespace HR_Management.Domain
         public int LeaveTypeId { get; set; }
         public DateTime DateRequested { get; set; }
         public string RequestComments { get; set; }
-        public DateTime DateActioned { get; set; }
+        public DateTime? DateActioned { get; set; }
         public bool? Aoorived { get; set; }
         public bool Cancelled { get; set; }
 
