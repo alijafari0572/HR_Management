@@ -10,23 +10,21 @@ using System.Threading.Tasks;
 
 namespace HR_Management.Application.Features.LeaveAllocations.Handlers.Commands
 {
-    public class UpdateLeaveAllocationCommandHandler : IRequestHandler<UpdateLeaveAllocationCommand, Unit>
+    public class DeleteLeaveAllocationCommandHandler : IRequestHandler<DeleteLeaveAllocationCommand>
     {
         private readonly ILeaveAllocationRepository _leaveAllocationRepository;
         private readonly IMapper _mapper;
 
-        public UpdateLeaveAllocationCommandHandler(ILeaveAllocationRepository leaveAllocationRepository,
+        public DeleteLeaveAllocationCommandHandler(ILeaveAllocationRepository leaveAllocationRepository,
             IMapper mapper)
         {
             _leaveAllocationRepository = leaveAllocationRepository;
             _mapper = mapper;
         }
-        public async Task<Unit> Handle(UpdateLeaveAllocationCommand request, CancellationToken cancellationToken)
+        public async Task<Unit> Handle(DeleteLeaveAllocationCommand request, CancellationToken cancellationToken)
         {
-            var leaveAllocation = await _leaveAllocationRepository.GetById(request.LeaveAllocationDto.Id);
-            _mapper.Map(request.LeaveAllocationDto, leaveAllocation);
-            await _leaveAllocationRepository.Update(leaveAllocation);
-
+            var leaveAllocation = await _leaveAllocationRepository.GetById(request.Id);
+            await _leaveAllocationRepository.Delete(leaveAllocation);
             return Unit.Value;
         }
     }

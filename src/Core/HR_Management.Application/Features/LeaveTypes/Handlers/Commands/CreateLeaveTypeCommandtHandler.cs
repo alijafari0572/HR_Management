@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using HR_Management.Application.DTOs.LeaveType.Validators;
 
 namespace HR_Management.Application.Features.LeaveTypes.Handlers.Commands
 {
@@ -26,7 +27,13 @@ namespace HR_Management.Application.Features.LeaveTypes.Handlers.Commands
 
         public async Task<int> Handle(CreateLeaveTypeCommand request, CancellationToken cancellationToken)
         {
-            var leavetype = _mapper.Map<Domain.LeaveType>(request.LeaveTypeDto);
+            var validator = new CreateLeaveTypeValidator();
+            var validationResult = await validator.ValidateAsync(request.CreateLeaveTypeDto);
+
+            if (validationResult.IsValid == false)
+                throw new Exception();
+
+            var leavetype = _mapper.Map<Domain.LeaveType>(request.CreateLeaveTypeDto);
             leavetype = await _leaveTypeRepository.Add(leavetype);
             return leavetype.Id;
         }
