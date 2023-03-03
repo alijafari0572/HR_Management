@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using HR_Management.Application.DTOs.LeaveType.Validators;
+using HR_Management.Application.Exceptions;
 
 namespace HR_Management.Application.Features.LeaveTypes.Handlers.Commands
 {
@@ -31,7 +32,7 @@ namespace HR_Management.Application.Features.LeaveTypes.Handlers.Commands
             var validationResult = await validator.ValidateAsync(request.CreateLeaveTypeDto);
 
             if (validationResult.IsValid == false)
-                throw new Exception();
+                throw new ValidationException(validationResult);
 
             var leavetype = _mapper.Map<Domain.LeaveType>(request.CreateLeaveTypeDto);
             leavetype = await _leaveTypeRepository.Add(leavetype);
