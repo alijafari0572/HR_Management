@@ -4,6 +4,7 @@ using HR_Management.Application.DTOs.LeaveType.Validators;
 using HR_Management.Application.Exceptions;
 using HR_Management.Application.Features.LeaveRequests.Requests.Commands;
 using HR_Management.Application.Persistance.Contracts;
+using HR_Management.Application.Responses;
 using HR_Management.Domain;
 using MediatR;
 using System;
@@ -16,7 +17,7 @@ namespace HR_Management.Application.Features.LeaveRequests.Handlers.Commands
 {
 
     public class CreateLeaveRequestCommandHandler :
-    IRequestHandler<CreateLeaveRequestCommand, int>
+    IRequestHandler<CreateLeaveRequestCommand, BaseCommandResponse>
     {
         private ILeaveRequestRepository _leaveRequestRepository;
         private IMapper _mapper;
@@ -31,17 +32,27 @@ namespace HR_Management.Application.Features.LeaveRequests.Handlers.Commands
             _leaveTypeRepository = leaveTypeRepository;
         }
 
-        public async Task<int> Handle(CreateLeaveRequestCommand request, CancellationToken cancellationToken)
+        public async Task<BaseCommandResponse> Handle(CreateLeaveRequestCommand request, CancellationToken cancellationToken)
         {
+            var response = new BaseCommandResponse();
             var validator = new CreateLeaveRequestDtoValidator(_leaveTypeRepository);
             var validationResult = await validator.ValidateAsync(request.LeaveRequestDto);
 
             if (validationResult.IsValid == false)
-                throw new ValidationException(validationResult);
+            {
+                //throw new ValidationException(validationResult);
+                response.Success = false;
+                response.Message = "Creation Faild";
+                response.Errors=validationResult.Errors.Select(q=>q.ErrorMessage).ToList();
+            }
 
             var leaverequest = _mapper.Map<LeaveRequest>(request.LeaveRequestDto);
             leaverequest = await _leaveRequestRepository.Add(leaverequest);
-            return leaverequest.Id;
+            response.Success = true;
+            response.Message = "Creation Succesfull";
+            response.Id=leaverequest.Id;
+            //return leaverequest.Id;
+            return response;
         }
     }
 
