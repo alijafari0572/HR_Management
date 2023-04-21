@@ -2,7 +2,7 @@
 using HR_Management.Application.DTOs.LeaveAllocation.Validators;
 using HR_Management.Application.Exceptions;
 using HR_Management.Application.Features.LeaveAllocations.Requests.Commands;
-using HR_Management.Application.Persistance.Contracts;
+using HR_Management.Application.Contracts.Persistance;
 using MediatR;
 using System;
 using System.Collections.Generic;

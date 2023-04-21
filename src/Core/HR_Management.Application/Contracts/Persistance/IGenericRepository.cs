@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HR_Management.Application.Persistance.Contracts
+namespace HR_Management.Application.Contracts.Persistance
 {
     public interface IGenericRepository<T> where T : class
     {
