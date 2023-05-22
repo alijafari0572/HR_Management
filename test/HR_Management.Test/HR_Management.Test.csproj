@@ -23,4 +23,13 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="LeaveTypes\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Core\HR_Management.Application\HR_Management.Application.csproj" />
+    <ProjectReference Include="..\..\src\Core\HR_Management.Domain\HR_Management.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
