@@ -30,6 +30,8 @@
   <ItemGroup>
     <ProjectReference Include="..\..\src\Core\HR_Management.Application\HR_Management.Application.csproj" />
     <ProjectReference Include="..\..\src\Core\HR_Management.Domain\HR_Management.Domain.csproj" />
+    <ProjectReference Include="..\..\src\Infestructure\HR_Management.Infrastructure\HR_Management.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\src\Infestructure\HR_Management.Persistence\HR_Management.Persistence.csproj" />
   </ItemGroup>
 
 </Project>

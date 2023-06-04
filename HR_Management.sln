@@ -30,7 +30,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HR_Management.Persistence",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HR_Management.Api", "src\Api\HR_Management.Api\HR_Management.Api.csproj", "{F5A85863-787E-4B30-84BC-E6B8987A2868}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HR_Management.Test", "test\HR_Management.Test\HR_Management.Test.csproj", "{157B256B-6635-4B20-B74D-7FED02E7B387}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HR_Management.Test", "test\HR_Management.Test\HR_Management.Test.csproj", "{157B256B-6635-4B20-B74D-7FED02E7B387}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HR_Management.MVC", "src\UI\HR_Management.MVC\HR_Management.MVC.csproj", "{789CF250-E92A-44DB-B569-1F336D686F14}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -62,6 +64,10 @@ Global
 		{157B256B-6635-4B20-B74D-7FED02E7B387}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{157B256B-6635-4B20-B74D-7FED02E7B387}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{157B256B-6635-4B20-B74D-7FED02E7B387}.Release|Any CPU.Build.0 = Release|Any CPU
+		{789CF250-E92A-44DB-B569-1F336D686F14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{789CF250-E92A-44DB-B569-1F336D686F14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{789CF250-E92A-44DB-B569-1F336D686F14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{789CF250-E92A-44DB-B569-1F336D686F14}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -77,6 +83,7 @@ Global
 		{C1249BE6-3876-457A-B0B6-04F6FE61F26C} = {EDE87F26-65A9-4A13-A91F-BEBA92643A70}
 		{F5A85863-787E-4B30-84BC-E6B8987A2868} = {209F5313-7C0B-4FBC-A95C-3C91A673FCE2}
 		{157B256B-6635-4B20-B74D-7FED02E7B387} = {67A010DC-D483-4030-82D7-E4F681DA374B}
+		{789CF250-E92A-44DB-B569-1F336D686F14} = {F43C818B-E3EF-4009-9831-BB2CB5484B12}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {907B4B40-A8B6-49A6-9223-68907A94DF69}
