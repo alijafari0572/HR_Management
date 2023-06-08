@@ -1,8 +1,13 @@
+using HR_Management.MVC.Services;
+using Microsoft.Extensions.DependencyInjection;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-
+string api = builder.Configuration.GetSection("ApiAddress").Value;
+builder.Services.AddHttpClient<IClient, Client>(
+    c => c.BaseAddress = new Uri(builder.Configuration.GetSection("ApiAddress").Value));
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
