@@ -1,5 +1,6 @@
-using HR_Management.MVC.Services;
+using HR_Management.MVC.Services.Base;
 using Microsoft.Extensions.DependencyInjection;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +9,8 @@ builder.Services.AddControllersWithViews();
 string api = builder.Configuration.GetSection("ApiAddress").Value;
 builder.Services.AddHttpClient<IClient, Client>(
     c => c.BaseAddress = new Uri(builder.Configuration.GetSection("ApiAddress").Value));
+builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
