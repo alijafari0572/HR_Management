@@ -1,6 +1,8 @@
 using HR_Management.Application;
 using HR_Management.Infrastructure;
 using HR_Management.Persistence;
+using Microsoft.EntityFrameworkCore;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
