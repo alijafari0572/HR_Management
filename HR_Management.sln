@@ -32,7 +32,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HR_Management.Api", "src\Ap
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HR_Management.Test", "test\HR_Management.Test\HR_Management.Test.csproj", "{157B256B-6635-4B20-B74D-7FED02E7B387}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HR_Management.MVC", "src\UI\HR_Management.MVC\HR_Management.MVC.csproj", "{789CF250-E92A-44DB-B569-1F336D686F14}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HR_Management.MVC", "src\UI\HR_Management.MVC\HR_Management.MVC.csproj", "{789CF250-E92A-44DB-B569-1F336D686F14}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

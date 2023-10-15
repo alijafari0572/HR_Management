@@ -17,7 +17,7 @@ namespace HR_Management.MVC.Services
 			this.httpClient = httpClient;
 			this.localStorageService = localStorageService;
 		}
-		public async Task<Response<int>> CreateLeaveType(LeaveTypeVM leaveType)
+		public async Task<Response<int>> CreateLeaveType(CreateLeaveTypeVM leaveType)
 		{
 			try
 			{
